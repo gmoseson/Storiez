@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'stories/index'
+
+  get 'stories/new'
+
+  get 'home/index'
+
   devise_for :users
 
   root 'home#index'
