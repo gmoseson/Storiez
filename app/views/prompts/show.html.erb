@@ -1,0 +1,8 @@
+<h1><%= "#{@prompt.name}"%></h1>
+
+<% @stories.each do |story| %><br>
+<%= story.user.email%><br>
+<%= story.body.first(400)%><br>
+<%= image_tag story.photo, size: '100x100'%><br>
+
+<% end %>

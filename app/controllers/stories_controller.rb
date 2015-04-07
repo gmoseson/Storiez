@@ -24,11 +24,25 @@ class StoriesController < ApplicationController
 	end
 
  	def edit
-    	@photo = current_user.stories.find(params[:id])
+    	@story = current_user.stories.find(params[:id])
+    	@photo = @story.photo
  	end
 
-	def update
-	end
+ 	def update
+	     @story = current_user.stories.find(params[:id])
+	    # @photo = Photo.find(params[:id])
+	    	if @story.update_attributes(story_params)
+	     	 redirect_to stories_path
+	   		 else 
+	    	  render :edit
+	   		 end
+ 	 end
+
+ 	 def show
+ 	 	@story = Story.find(params[:id])
+ 	 	@prompt = @story.prompt.name
+ 	 end
+
 
 	def story_params
 		params.require(:story).permit(:body, :prompt_id, :photo)

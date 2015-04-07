@@ -3,7 +3,9 @@
 
 <%= simple_form_for @story, html: {class: 'form-horizontal'} do |form| %>
 	<%= form.input :body, label: 'Edit Text' %>
-	<%= form.submit 'Save', class: 'btn btn-primary' %>
+	<%= form.submit 'Update', class: 'btn btn-primary' %>
+	 <%= form.input :photo, label: "Change photo:"%><br>
+	 <%= form.submit 'Replace photo', class: 'btn btn-primary' %>
 	<% end %>
 	</div>
 

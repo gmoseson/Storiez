@@ -6,9 +6,9 @@
 <hr>
 
 <% @stories.each do |story| %>
-	<h4><%= story.prompt.name.capitalize%></h4> 
-	<br><%= link_to story.try(:user).try(:email), user_path(story.user)%><br>
-	<%= story.body %><br>
+	<h4><%= link_to story.prompt.name.capitalize, story_path(story) %></h4> 
+	<br><%= link_to story.user.email, user_path(story.user)%><br>
+	<%= story.body.first(400) %><br>
 	<%= image_tag story.photo, size: '100x100' %>
 	<hr>
 <% end %>
