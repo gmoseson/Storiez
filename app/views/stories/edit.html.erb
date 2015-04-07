@@ -1,0 +1,14 @@
+<div class = "row">
+	<div class="col-md-7">
+
+<%= simple_form_for @story, html: {class: 'form-horizontal'} do |form| %>
+	<%= form.input :body, label: 'Edit Text' %>
+	<%= form.submit 'Save', class: 'btn btn-primary' %>
+	<% end %>
+	</div>
+
+	<div class="col-md-5">
+    <%= image_tag @story.photo, size: '300x300' %>
+  </div>
+
+</div>

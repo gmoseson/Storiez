@@ -1,0 +1,7 @@
+<h1><%= "#{@category.name} Stories" %></h1> <br><br>
+<% @stories.each do |s| %><br>
+<h4><%= s.prompt.name.capitalize %><br></h4>
+<h8><%= link_to s.user.email, user_path(s.user) %></h8><br>
+<br><%= image_tag s.photo, size: '100x100' %><br>
+<%= s.body %><hr>
+<% end %>

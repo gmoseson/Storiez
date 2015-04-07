@@ -1,2 +1,14 @@
-<h1>Stories#index</h1>
-<p>Find me in app/views/stories/index.html.erb</p>
+<h1>Stories Feed</h1><br>
+
+
+<h4><%=link_to 'Write a new Story', new_story_path(Prompt.first)%><br></h4>
+
+<hr>
+
+<% @stories.each do |story| %>
+	<h4><%= story.prompt.name.capitalize%></h4> 
+	<br><%= link_to story.try(:user).try(:email), user_path(story.user)%><br>
+	<%= story.body %><br>
+	<%= image_tag story.photo, size: '100x100' %>
+	<hr>
+<% end %>

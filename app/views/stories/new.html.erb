@@ -1,2 +1,15 @@
-<h1>Stories#new</h1>
-<p>Find me in app/views/stories/new.html.erb</p>
+
+
+<h1><%= "Write about #{@prompt.name}"%></h1>
+
+<div class="row">
+	<div class="col-md-5">
+
+<%= simple_form_for @story do |form| %><br>
+	 <%= form.input :body, label: "Your story:", as: :text %><br>
+	 <%= form.input :prompt_id, as: :hidden %><br>
+	 <%= form.input :photo, label: "Include a photo:"%><br>
+	 <%= form.submit 'Post' %>
+<% end %>
+</div>
+</div>

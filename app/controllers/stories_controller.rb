@@ -2,14 +2,14 @@ class StoriesController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		# @prompt = Prompt.all.order('RAND()').first
-		@prompts = Prompt.all
+		@prompt = Prompt.all
 		@stories = Story.all
+		@user = User.all
 	end
 
 	def new
-		@story = Story.new
-		@prompt = Prompt.find(params[:prompt_id])
+		@prompt = Prompt.all.order('RANDOM()').first
+		@story = Story.new(prompt: @prompt)
 	end
 
 	def create
@@ -23,8 +23,15 @@ class StoriesController < ApplicationController
 		end
 	end
 
+ 	def edit
+    	@photo = current_user.stories.find(params[:id])
+ 	end
+
+	def update
+	end
+
 	def story_params
-		params.require(:story).permit(:body)
+		params.require(:story).permit(:body, :prompt_id, :photo)
 	end
 
 end
