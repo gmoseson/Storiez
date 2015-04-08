@@ -1,5 +1,10 @@
-<h1><%= "#{@prompt.capitalize}"%></h1>
+<h3><%= "#{@prompt.capitalize}"%></h3><hr>
 
-<%= image_tag @story.photo, size: '300x300' %><br>
-<%= @story.body %>
+<h5><%= @story.user.email %></h5>
+<h6><%= @story.created_at.strftime("%d %b. %Y") %> </h6><br>
+<h7><%= @story.body %></h7><br>
+<br>
+<%= image_tag @story.photo, size: '300x300' %>
+<hr>
+
 

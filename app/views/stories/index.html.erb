@@ -1,14 +1,14 @@
-<h1>Stories Feed</h1><br>
+<h1>aLL tHe sToRieZ!</h1><br>
 
 
-<h4><%=link_to 'Write a new Story', new_story_path(Prompt.first)%><br></h4>
-
+<h4><%=link_to 'Write a new Story', new_story_path(Prompt.first), class: "btn btn-lg btn-default"%><br></h4>
 <hr>
 
 <% @stories.each do |story| %>
 	<h4><%= link_to story.prompt.name.capitalize, story_path(story) %></h4> 
-	<br><%= link_to story.user.email, user_path(story.user)%><br>
-	<%= story.body.first(400) %><br>
+	<%= link_to story.user.email, user_path(story.user)%>
+	<h6><%= story.created_at.strftime("%d %b. %Y") %> </h6><br>
+	<%= story.body.first(400) %>   <%= link_to "(more)", story_path(story) %><br><br>
 	<%= image_tag story.photo, size: '100x100' %>
 	<hr>
 <% end %>

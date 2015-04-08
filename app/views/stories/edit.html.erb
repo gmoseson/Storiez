@@ -1,12 +1,12 @@
-<div class = "row">
+<br><br><br><div class = "row">
 	<div class="col-md-7">
 
 <%= simple_form_for @story, html: {class: 'form-horizontal'} do |form| %>
 	<%= form.input :body, label: 'Edit Text'%> <br>
 	 <%= form.input :photo, label: "Change photo:"%><br>
-	 <%= form.submit 'Update', class: 'btn btn-primary' %>
-	<% end %><br><br>
-	 <%= button_to 'Delete Story', story_path(@story), method: :delete, :class => "btn btn-primary" %>
+	 <%= form.submit 'Update', class: 'btn btn-info' %>
+	<% end %><br>
+	 <%= button_to 'Delete Story', story_path(@story), method: :delete,class: 'btn btn-danger' %>
 	</div><br>
 	
 

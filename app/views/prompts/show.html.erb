@@ -1,8 +1,11 @@
-<h1><%= "#{@prompt.name}"%></h1>
+<h1><%= "All stories about #{@prompt.name}"%></h1><br>
 
 <% @stories.each do |story| %><br>
-<%= story.user.email%><br>
-<%= story.body.first(400)%><br>
-<%= image_tag story.photo, size: '100x100'%><br>
+<h5><%= story.user.email%><br></h5>
+<h6><%= story.created_at.strftime("%d %b. %Y") %> </h6><br>
+<%= story.body.first(400)%><br><br>
+<%= image_tag story.photo, size: '100x100'%><br><hr>
 
 <% end %>
+
+<h4><%=link_to 'Write a story', new_story_path(:id), class: "btn btn-lg btn-default"%><br></h4>

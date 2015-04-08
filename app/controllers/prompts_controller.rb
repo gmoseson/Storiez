@@ -24,5 +24,5 @@ class PromptsController < ApplicationController
 	def prompt_params
 		params.require(:prompt).permit(:name, :category_id)
 	end
-
 end
+

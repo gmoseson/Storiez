@@ -1,9 +1,14 @@
+<br>
+<br>
+<br>
 
 
-<h1><%= "Write about #{@prompt.name}"%></h1>
+<h2><%= "Write about #{@prompt.name}"%></h2>
+<h9><small><%= "Use the above prompt to guide your story. Be descriptive - the longer the better! You can add a photo to go along with your story."%></small></h9>
 
 <div class="row">
-	<div class="col-md-5">
+<div class = "col-md-8">
+	<div class="col-md-9">
 
 <%= simple_form_for @story, html: { class: 'form-horizontal'} do |form| %><br>
 	 <%= form.input :body, label: "Your story:", as: :text %><br>
@@ -11,5 +16,6 @@
 	 <%= form.input :photo, label: "Include a photo:"%><br>
 	 <%= form.submit 'Post', class: 'btn btn-primary' %>
 <% end %>
+</div>
 </div>
 </div>
