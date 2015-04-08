@@ -3,7 +3,7 @@ class StoriesController < ApplicationController
 
 	def index
 		@prompt = Prompt.all
-		@stories = Story.all
+		@stories = Story.all.order('created_at DESC')
 		@user = User.all
 	end
 
@@ -29,8 +29,7 @@ class StoriesController < ApplicationController
  	end
 
  	def update
-	     @story = current_user.stories.find(params[:id])
-	    # @photo = Photo.find(params[:id])
+	     @story = Story.find(params[:id])
 	    	if @story.update_attributes(story_params)
 	     	 redirect_to stories_path
 	   		 else 
@@ -42,6 +41,12 @@ class StoriesController < ApplicationController
  	 	@story = Story.find(params[:id])
  	 	@prompt = @story.prompt.name
  	 end
+
+ 	 def destroy
+       @story = Story.find(params[:id])
+       @story.delete
+       redirect_to stories_path
+   end
 
 
 	def story_params

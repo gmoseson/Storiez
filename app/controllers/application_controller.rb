@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
      @categories = Category.all
  end 
 
+  before_action :set_prompts
+ def set_prompts
+     @prompts = Prompt.all
+ end 
+
     before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

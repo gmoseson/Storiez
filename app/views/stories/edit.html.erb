@@ -2,12 +2,12 @@
 	<div class="col-md-7">
 
 <%= simple_form_for @story, html: {class: 'form-horizontal'} do |form| %>
-	<%= form.input :body, label: 'Edit Text' %>
-	<%= form.submit 'Update', class: 'btn btn-primary' %>
+	<%= form.input :body, label: 'Edit Text' %> <br>
 	 <%= form.input :photo, label: "Change photo:"%><br>
-	 <%= form.submit 'Replace photo', class: 'btn btn-primary' %>
+	 <%= form.submit 'Update', class: 'btn btn-primary' %>
 	<% end %>
 	</div>
+	 <%= button_to 'delete story', story_path(@story), method: :delete %>
 
 	<div class="col-md-5">
     <%= image_tag @story.photo, size: '300x300' %>

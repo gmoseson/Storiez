@@ -1,0 +1,5 @@
+<%= simple_form_for @prompt, html: { class: 'form-horizontal' } do |form| %><br>
+	 <%= form.input :name, label: "New prompt:", as: :text %><br>
+	 <%= form.association :category, label_method: :name %><br>
+	 <%= form.button :submit %>
+	  <% end %>

@@ -1,7 +1,9 @@
 <h1><%="#{@user.email}'s stories"%></h1><br>
-<%= @stories.each do |s| %>
+<% @stories.each do |s| %>
 <h5><%= s.prompt.name.capitalize%></h5><br>
 <br><%= image_tag s.photo, size: '100x100' %><br>
 <%= s.body %><br><hr>
-<%= link_to "Edit", edit_story_path(s) %>
+<% if s.user == current_user %>
+	<%= link_to "Edit", edit_story_path(s) %>
+	<% end %>
 <% end %>
