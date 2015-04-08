@@ -7,7 +7,12 @@ category6 = Category.create(name: 'Love')
 category7 = Category.create(name: 'Family')
 category8 = Category.create(name: 'School')
 category9 = Category.create(name: 'Animals')
-category10 = Category.create(name: 'Movies')
+category10 = Category.create(name: 'Music')
+category11 = Category.create(name: 'Traditions')
+category12 = Category.create(name: 'Friends')
+category13 = Category.create(name: 'Sports')
+category14 = Category.create(name: 'Random')
+category15 = Category.create(name: 'Politics')
 
 user1 = User.create(email: 'gmoseson@gmail.com', password: 'December12')
 
