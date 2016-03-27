@@ -17,4 +17,19 @@
 //= require_tree .
 
 
+$(document).ready(function (){
+  $('.dropdown.prompt').hover(function(){
+    $('ul.fallback.prompt').stop().slideDown();
+  });
+  $('ul.fallback.prompt').mouseleave(function(){
+    $('ul.fallback.prompt').stop().slideUp();
+  });
+
+  $('.dropdown.category').hover(function(){
+    $('ul.fallback.category').stop().slideDown();
+  });
+  $('ul.fallback.category').mouseleave(function(){
+    $('ul.fallback.category').stop().slideUp();
+  });
+});
 
