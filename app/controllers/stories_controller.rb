@@ -24,29 +24,29 @@ class StoriesController < ApplicationController
 	end
 
  	def edit
-    	@story = current_user.stories.find(params[:id])
-    	@photo = @story.photo
+		@story = current_user.stories.find(params[:id])
+		@photo = @story.photo
  	end
 
  	def update
-	     @story = Story.find(params[:id])
-	    	if @story.update_attributes(story_params)
-	     	 redirect_to stories_path
-	   		 else 
-	    	  render :edit
-	   		 end
- 	 end
+    @story = Story.find(params[:id])
+    if @story.update_attributes(story_params)
+   		redirect_to stories_path
+ 		else 
+  		render :edit
+ 		end
+ 	end
 
- 	 def show
- 	 	@story = Story.find(params[:id])
- 	 	@prompt = @story.prompt.name
- 	 end
+ 	def show
+ 	 @story = Story.find(params[:id])
+ 	 @prompt = @story.prompt.name
+ 	end
 
- 	 def destroy
-       @story = Story.find(params[:id])
-       @story.delete
-       redirect_to stories_path
-   end
+ 	def destroy
+    @story = Story.find(params[:id])
+    @story.delete
+    redirect_to stories_path
+  end
 
 
 	def story_params
